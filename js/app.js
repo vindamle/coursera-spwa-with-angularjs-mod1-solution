@@ -7,8 +7,8 @@
    $scope.lunchMenu = '';
    $scope.message = '';
    $scope.lunchItemCount = 0;
-   $scope.inputError = true;
-   $scope.check = function() {
+   $scope.inputError = false;
+   $scope.checkIfTooMuch = function() {
      var lunchItems = $scope.lunchMenu.split(',').filter(isNotEmptyOrBlank);
     $scope.lunchItemCount = lunchItems.length;
     if ($scope.lunchItemCount == 0) {
@@ -21,7 +21,7 @@
     }
     else {
       $scope.message = 'Too much!';
-      $scopr.inputError = false;
+      $scope.inputError = false;
     }
    }
    function isNotEmptyOrBlank(item) {
